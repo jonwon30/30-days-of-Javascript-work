@@ -235,3 +235,4 @@ let totalTotal3 = totalNum[2];
 let finalNum = Number(totalTotal1) + Number(totalTotal2) + Number(totalTotal3)
 console.log(finalNum);
 
+console.log("test")
