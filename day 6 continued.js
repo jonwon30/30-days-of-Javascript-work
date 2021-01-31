@@ -173,3 +173,21 @@ console.log(`These countries do not have land:- ${(doesNotContainLand.join(", ")
 countryFunc();
 
 // In above countries array, check if there is a country or countries end with a substring 'ia'. If there are countries end with, print it as array. If there is no country containing the word 'ai', print 'These are countries ends without ia'.
+
+
+let landArray2 = [];
+let doesNotContainLand2 = [];
+
+let countryFunc2 = function (country) {
+  for (i = 0; i < countries2.length; i++) {
+    x = (countries2[i])
+    if (x.includes("ai")) {
+      landArray2.push(x);
+    } else {
+      doesNotContainLand2.push(x)
+}
+} 
+console.log(`These countries have ai: ${(landArray2.join(" & "))}`);
+console.log(`These countries do not have ai: ${(doesNotContainLand2.join(" "))}`);
+}
+countryFunc();
