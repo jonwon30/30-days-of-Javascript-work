@@ -191,3 +191,21 @@ console.log(`These countries that end with ia: ${(landArray2.join(" & "))}`);
 console.log(`These countries do not end with ia: ${(doesNotContainLand2.join(" "))}`);
 }
 countryFunc2("ia");
+
+// Using the above countries array, find the country containing the biggest number of characters.
+
+let arrayCountriesLength3 = [];
+
+for (i = 0; i < countries2.length; i++) {
+  x = countries2[i].length
+  arrayCountriesLength3.push(x);
+};
+g = Math.max(...arrayCountriesLength3);
+
+
+for (i = 0; i < countries2.length; i++) {
+  x = countries2[i].length
+  if (x == g) {
+  console.log(`this is the biggest named country ${countries[i]} with ${g} characters`)
+  }
+}
