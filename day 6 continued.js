@@ -180,14 +180,14 @@ let doesNotContainLand2 = [];
 
 let countryFunc2 = function (country) {
   for (i = 0; i < countries2.length; i++) {
-    x = (countries2[i])
-    if (x.includes("ai")) {
+    x = (countries2[i]).toUpperCase()
+    if (x.includes(country.toUpperCase())) {
       landArray2.push(x);
     } else {
       doesNotContainLand2.push(x)
 }
 } 
-console.log(`These countries have ai: ${(landArray2.join(" & "))}`);
-console.log(`These countries do not have ai: ${(doesNotContainLand2.join(" "))}`);
+console.log(`These countries that end with ia: ${(landArray2.join(" & "))}`);
+console.log(`These countries do not end with ia: ${(doesNotContainLand2.join(" "))}`);
 }
-countryFunc();
+countryFunc2("ia");
