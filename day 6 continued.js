@@ -219,3 +219,53 @@ for (i = 0; i < countries2.length; i++) {
   }
 }
 
+/*
+let prompt1 = prompt("enter a number here");
+prompt4 = parseInt(prompt1);
+let prompt2 = prompt("enter a number here");
+prompt5 = parseInt(prompt2);
+
+let calculator = function () {
+  let total = prompt4 / prompt5;
+  alert(total);
+}
+
+calculator(); */
+
+// Find the longest word in the webTechs array
+
+let webTechs2 = [];
+
+for (i = 0; i < webTechs.length; i++) {
+  x = webTechs[i].length
+  webTechs2.push(x);
+};
+let webt = Math.max(...webTechs2);
+
+for (i = 0; i < webTechs.length; i++) {
+  x = webTechs[i].length
+  if (x == webt) {
+  console.log(`this is the biggest webTech company ${webTechs[i]} with ${webt} characters`)
+  }
+}
+
+// Use the webTechs array to create the following array of arrays:
+// "HTML", 4], ["CSS", 3],["JavaScript", 10],["React", 5],["Redux", 5],["Node", 4],["MongoDB", 7]]
+
+let webTechs3 = []
+for (i = 0; i < webTechs.length; i++) {
+  y = webTechs[i]
+  x = webTechs[i].length
+  webTechs3.push([y, x])
+  
+}
+console.log(webTechs3);
+
+// An application created using MongoDB, Express, React and Node is called a MERN stack app. Create the acronym MERN by using the array mernStack 
+
+let mernAbb = []
+for (const tech of mernStack) {
+  mernAbb.push(tech[0]);
+}
+
+console.log(mernAbb.join(""))
