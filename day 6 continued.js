@@ -209,3 +209,13 @@ for (i = 0; i < countries2.length; i++) {
   console.log(`this is the biggest named country ${countries[i]} with ${g} characters`)
   }
 }
+
+// Using the above countries array, find the country containing only 5 characters.
+
+for (i = 0; i < countries2.length; i++) {
+  x = countries2[i].length
+  if (x == 5) {
+  console.log(`this country ${countries[i]} has 5 characters`)
+  }
+}
+
