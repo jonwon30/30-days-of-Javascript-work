@@ -210,3 +210,82 @@ function waightOfSubstance (mass, gravity) {
 }
 
 console.log(waightOfSubstance(100, 1.97));
+
+// Temperature in oC can be converted to oF using this formula: oF = (oC x 9/5) + 32. Write a function which convert oC to oF convertCelciusToFahrenheit.
+
+function temperatureinOf (oC) {
+  oF = (oC * 9 / 5) + 32;
+  return oF
+}
+console.log(temperatureinOf(6));
+
+/*
+Body mass index(BMI) is calculated as follows: bmi = weight in Kg / (height x height) in m2. Write a function which calculates bmi. BMI is used to broadly define different weight groups in adults 20 years old or older.Check if a person is underweight, normal, overweight or obese based the information given below.
+
+The same groups apply to both men and women.
+Underweight: BMI is less than 18.5
+Normal weight: BMI is 18.5 to 24.9
+Overweight: BMI is 25 to 29.9
+Obese: BMI is 30 or more */
+
+function BMI (kgWaight, heightinMeters) {
+  let heightSquared = heightinMeters * 2;
+  let totalBMI = kgWaight / heightSquared.toFixed(2);
+    if (totalBMI < 18.5) {
+    return (`your BMI is ${totalBMI.toFixed(2)} which means you are underwaight`)
+    } else if (totalBMI >= 18.5 && totalBMI <= 24.9){
+    return (`your BMI is ${totalBMI.toFixed(2)} which means you are normal waight`)
+    } else if (totalBMI > 24.9 && totalBMI <= 29.9){
+      return (`your BMI is ${totalBMI.toFixed(2)} which means you are overwaight`)
+      } else {
+        return (`your BMI is ${totalBMI.toFixed(2)} which means your are obese`)
+      }
+}
+console.log(BMI(120, 1.77));
+
+// Write a function called checkSeason, it takes a month parameter and returns the season:Autumn, Winter, Spring or Summer.
+
+function checkSeason (month) {
+  switch (month) {
+    case "December":
+    case "January":
+    case "February":
+      console.log("Winter")
+      break;
+    case "March":
+    case "April":
+    case "May":
+      console.log("Spring")
+      break;
+    case "June":
+    case "July":
+    case "August":
+      console.log("Summer")
+      break;
+    case "September":
+    case "October":
+    case "November":
+      console.log("Autumn")
+  }
+}
+checkSeason("July");
+
+// Math.max returns its largest argument. Write a function findMax that takes three arguments and returns their maximum with out using Math.max method.
+
+function findMax (x, y, z) {
+  console.log(Math.max(x,y,z))
+};
+findMax(10,15,20)
+
+function findMax2 (x, y, z) {
+  if (x > y && x > z) {
+    console.log(`${x} is greater than ${y} and ${z}`)
+  }  else if (y > x && y > z) {
+    console.log(`${y} is greater than ${x} and ${z}`)
+  } else {
+    console.log(`${z} is greater than ${x} and ${y}`)
+  }
+};
+findMax2(5,15,2)
+
+// Exercises: Level 2
