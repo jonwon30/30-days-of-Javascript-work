@@ -289,3 +289,227 @@ function findMax2 (x, y, z) {
 findMax2(5,15,2)
 
 // Exercises: Level 2
+
+// Linear equation is calculated as follows: ax + by + c = 0. Write a function which calculates value of a linear equation, solveLinEquation: NOT DONE
+
+
+// Quadratic equation is calculated as follows: ax2 + bx + c = 0. Write a function which calculates value or values of a quadratic equation, solveQuadEquation.  NOT DONE
+
+// Declare a function name printArray. It takes array as a parameter and it prints out each value of the array. 
+
+let newArray = [1,2,3,4,5,6,7,8,9,10,20,30,40,50]
+
+function printArray () {
+  newArray.forEach(num => console.log(num));
+  }
+printArray()
+
+// Write a function name showDateTime which shows time in this format: 08/01/2020 04:08 using the Date object.
+
+let dateToday = new Date();
+
+function newDate (date) {
+  let year = parseFloat(date.getFullYear());
+  let month = parseFloat(date.getMonth() +1 );
+  month = ("0" + month).slice(-2);
+  let date1 = date.getDate()
+  date1 = ("0" + date1).slice(-2);
+  let hours = date.getHours()
+  let minutes = date.getMinutes()
+  console.log(`${date1}/${month}/${year}  ${hours}:${minutes}` )
+}
+newDate(dateToday);
+
+// Declare a function name swapValues. This function swaps value of x to y
+
+function swapValues (x, y) {
+  x = y
+console.log(x,y)
+}
+swapValues("number 1", "number 2")
+
+// Declare a function name reverseArray. It takes array as a parameter and it returns the reverse of the array (don't use method).
+
+function printArray (array1) {
+  for(i = newArray.length; i > 0; i-- ) {
+    console.log (newArray[i]);
+  }
+}
+printArray(newArray);
+
+let letterArray = ["a","b","c","d","e","f","g"];
+
+function printArray2 (array1) {
+  for(i = letterArray.length; i > 0; i-- ) {
+    console.log (letterArray[i]);
+  }
+}
+printArray2(letterArray);
+
+
+// Declare a function name capitalizeArray. It takes array as a parameter and it returns the - capitalizedarray.
+
+function capitalizeArray (array1) {
+  let x = letterArray.forEach(letter => console.log(letter.toUpperCase()));
+  }
+  capitalizeArray(letterArray)
+
+  // Declare a function name addItem. It takes an item parameter and it returns an array after adding the item
+
+
+    let newArray2 = []
+
+    function addItem(addItem) {
+      newArray2.push(addItem)
+      console.log(newArray2)
+    }
+    addItem("pig")
+    addItem("fish")
+    addItem("chicken")
+
+    // Declare a function name removeItem. It takes an index parameter and it returns an array after removing an item
+
+
+    let newArray3 = ["item1","item2","item3","item4"]
+
+    function removeItem(splice1, splice2) {
+      newArray3.splice(splice1, splice2)
+    }
+    removeItem(1, 1)
+    console.log(newArray3)
+
+// Declare a function name sumOfNumbers. It takes a number parameter and it adds all the numbers in that range.
+
+
+const numbers2 = [1, 2, 3, 4, 5]
+const numbers3 = [10,10,10,10,10,10,10,10,10,10,10,10]
+let sum = 0
+let sum2 = 0
+function sumOfNumbers (num) {
+  for(let i = 0; i < num.length; i++){
+  sum  = sum + num[i]  // can be shorten, sum += numbers[i]
+  }
+  console.log(sum)
+}
+
+// sumOfNumbers(numbers2)
+sumOfNumbers(numbers3)
+
+// Declare a function name sumOfOdds. It takes a number parameter and it adds all the odd numbers in that - range Declare a function name sumOfEven. It takes a number parameter and it adds all the even numbers in that - range.
+
+let numbersEven = 0
+numbersOdd = 0
+let evensArray = [];
+let oddArray = [];
+let sumEvens = 0
+let sumOdds = 0
+
+function sumOfOdds (num) {
+  for (i = 0; i <= num; i++) {
+    if (i % 2 === 0) {
+      numbersEven = i;
+      evensArray.push(numbersEven);
+  } else {
+      numbersOdd = i;
+      oddArray.push(numbersOdd);
+  }
+  }
+  for(let i = 0; i < evensArray.length; i++){
+  sumEvens += evensArray[i]
+  } 
+  for(let i = 0; i < oddArray.length; i++){
+  sumOdds += oddArray[i]  
+  }
+    console.log(sumOdds);
+    console.log(sumEvens)
+} 
+
+sumOfOdds(100)
+console.log(evensArray)
+console.log(oddArray)
+
+// Declare a function name evensAndOdds . It takes a positive integer as parameter and it counts number of evens and odds in the number.
+
+evensCount = 0
+oddsCount = 0
+
+function evensAndOdds (num4) 
+  { for (i = 0; i <= num4; i++) 
+    { if (i % 2 === 0) 
+      { evensCount++;
+    } else 
+  { oddsCount++;
+    }
+    }
+    console.log(evensCount - 1)
+    console.log(oddsCount - 1)
+    }
+
+evensAndOdds(100)
+
+// Write a function which takes any number of arguments and return the sum of the arguments - already done. 0-255 168.212.226.204
+
+
+// Writ a function which generates a randomUserIp
+
+function newIp () {
+  let ipNew1 = (Math.floor(Math.random() * 255) + 0);
+  let ipNew2 = (Math.floor(Math.random() * 255) + 0);
+  let ipNew3 = (Math.floor(Math.random() * 255) + 0);
+  let ipNew4 = (Math.floor(Math.random() * 255) + 0);
+    console.log(`New IP Address is: ${ipNew1}.${ipNew2}.${ipNew3}.${ipNew4}`)
+}
+newIp()
+newIp()
+
+// Write a function which generates a randomMacAddress.. The MAC address is a string of usually six sets of two-digits or characters, separated by colons.
+
+function makeid() {
+  var result        = '';
+  var result2       = '';
+  var result3       = '';
+  var result4       = '';
+  var result5       = '';
+  var result6       = '';
+  var characters ='0123456789ABCDEF'; // Hexadecimal
+  var charactersLength = characters.length;
+  for ( var i = 0; i < 2; i++ ) {
+     result  += characters.charAt(Math.floor(Math.random() * charactersLength));
+     result2 += characters.charAt(Math.floor(Math.random() * charactersLength));
+     result3 += characters.charAt(Math.floor(Math.random() * charactersLength));
+     result4 += characters.charAt(Math.floor(Math.random() * charactersLength));
+     result5 += characters.charAt(Math.floor(Math.random() * charactersLength));
+     result6 += characters.charAt(Math.floor(Math.random() * charactersLength));
+  } 
+  return (`New Mac Address is: ${result}:${result2}:${result3}:${result4}:${result5}:${result6}`);
+}
+console.log(makeid());
+
+// Declare a function name randomHexaNumberGenerator. When this function is called it generates a random hexadecimal number. The function return the hexadecimal number.
+
+function randomHexaNumberGenerator(length) {
+  var result        = '';
+  var characters ='0123456789ABCDEF'; // Hexadecimal
+  var charactersLength = characters.length;
+  for ( var i = 0; i < length; i++ ) {
+     result  += characters.charAt(Math.floor(Math.random() * charactersLength));
+
+  } 
+  return (`New hexadecimal number is: #${result}`);
+}
+console.log(randomHexaNumberGenerator(6));
+
+// Declare a function name userIdGenerator. When this function is called it generates seven character id. The function return the id.
+
+function userIdGenerator() {
+  var result        = '';
+  var characters ='0123456789ABCDEFGHIJKLMNOPQRSTUVQXYZabcdefghijklmnopqrstuvwxyz@!'; // Hexadecimal
+  var charactersLength = characters.length;
+  for ( var i = 0; i < 7; i++ ) {
+     result  += characters.charAt(Math.floor(Math.random() * charactersLength));
+  } 
+  return (`Random Password is: ${result}`);
+}
+console.log(userIdGenerator(6));
+
+// Exercises: Level 3
