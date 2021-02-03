@@ -509,6 +509,45 @@ function userIdGenerator() {
   } 
   return (`Random Password is: ${result}`);
 }
-console.log(userIdGenerator(6));
+// console.log(userIdGenerator(6));
 
 // Exercises: Level 3
+// Modify question number n . Declare a function name userIdGeneratedByUser. It doesn’t take any parameter but it takes two inputs using prompt(). One of the input is the number of characters and the second input is the number of ids which are supposed to be generated.
+
+let firstNum = prompt("enter the number of characters for your random password, recommended to use 6 or more")
+firstNum = parseInt(firstNum);
+let secondNum = prompt("how many passwords do you want to generate? - Max 4")
+secondNum = parseInt(secondNum)
+
+function userIdGeneratedByUser(length, num) {
+  var result        = '';
+  var result2 = '';
+  var result3 = '';
+  var result4 = '';
+  var characters ='0123456789ABCDEFGHIJKLMNOPQRSTUVQXYZabcdefghijklmnopqrstuvwxyz@!'; // Hexadecimal
+  var charactersLength = characters.length;
+  for ( var i = 0; i < length; i++ ) {
+     result  += characters.charAt(Math.floor(Math.random() * charactersLength));
+     let newResult = result.repeat(num)
+     result2  += characters.charAt(Math.floor(Math.random() * charactersLength));
+     result3  += characters.charAt(Math.floor(Math.random() * charactersLength));
+     result4  += characters.charAt(Math.floor(Math.random() * charactersLength));
+  }
+  switch (num) {
+    case 1:
+      return (`1st random Password is: ${result}`)
+    case 2:
+      return (`1st random Password is: ${result}\nThe 2nd Password is: ${result2}`)
+      break;
+    case 3:
+      return (`1st random Password is: ${result}\nThe 2nd Password is: ${result2}\nThe 3rd Password is: ${result3}`)
+      break;
+    case 4:
+      return (`1st random Password is: ${result}.\nThe 2nd Password is ${result2}\nThe 3rd Password is: ${result3}.\nThe 4th Password is: ${result4}`)
+    break;
+    default:
+      return ("too many numbers added")
+  } 
+}
+
+console.log(userIdGeneratedByUser(firstNum, secondNum));
