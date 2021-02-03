@@ -50,8 +50,7 @@ function sumAllNumsx() {
 
   let squaredNumy = (function(n) {
     return n + n
-  })
-  (15)
+  }) (15)
   
   console.log(squaredNumy)
 
