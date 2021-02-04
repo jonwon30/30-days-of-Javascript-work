@@ -514,10 +514,10 @@ function userIdGenerator() {
 // Exercises: Level 3
 // Modify question number n . Declare a function name userIdGeneratedByUser. It doesn’t take any parameter but it takes two inputs using prompt(). One of the input is the number of characters and the second input is the number of ids which are supposed to be generated.
 
-let firstNum = prompt("enter the number of characters for your random password, recommended to use 6 or more")
-firstNum = parseInt(firstNum);
-let secondNum = prompt("how many passwords do you want to generate? - Max 4")
-secondNum = parseInt(secondNum)
+//let firstNum = prompt("enter the number of characters for your random password, recommended to use 6 or more")
+// firstNum = parseInt(firstNum);
+// let secondNum = prompt("how many passwords do you want to generate? - Max 4")
+// secondNum = parseInt(secondNum)
 
 function userIdGeneratedByUser(length, num) {
   var result        = '';
@@ -538,16 +538,129 @@ function userIdGeneratedByUser(length, num) {
       return (`1st random Password is: ${result}`)
     case 2:
       return (`1st random Password is: ${result}\nThe 2nd Password is: ${result2}`)
-      break;
     case 3:
       return (`1st random Password is: ${result}\nThe 2nd Password is: ${result2}\nThe 3rd Password is: ${result3}`)
-      break;
     case 4:
       return (`1st random Password is: ${result}.\nThe 2nd Password is ${result2}\nThe 3rd Password is: ${result3}.\nThe 4th Password is: ${result4}`)
-    break;
     default:
       return ("too many numbers added")
   } 
 }
+console.log(userIdGeneratedByUser());
 
-console.log(userIdGeneratedByUser(firstNum, secondNum));
+// rite a function name rgbColorGenerator and it generates rgb colors.
+
+function rgbColorGenerator () {
+  let rgb = (Math.floor(Math.random() * 255) + 0);
+  return (rgb);
+}
+let red = (rgbColorGenerator ());
+let green = (rgbColorGenerator ());
+let blue = (rgbColorGenerator ());
+console.log(`R${red}, G${green}, B${blue}`)
+
+// Write a function arrayOfHexaColors which return any number of hexadecimal colors in an array.
+
+function arrayOfHexaColors() {
+  let result        = '';
+  let characters ='0123456789ABCDEF'; // Hexadecimal
+  let charactersLength = characters.length;
+
+    for ( var i = 0; i < 6; i++ ) {
+     result  += characters.charAt(Math.floor(Math.random() * charactersLength));
+    } 
+    return result 
+}
+
+let randomHexColor = arrayOfHexaColors()
+// let randomHexColor2 = arrayOfHexaColors()
+
+console.log("#" + randomHexColor)
+
+// Write a function arrayOfRgbColors which return any number of RGB colors in an array. see above
+
+
+// Write a function convertHexaToRgb which converts hex  color to rgb and it returns an rgb color.
+
+
+// Hexadecimal:	0 1 2 3 4 5 6 7 8 9 A  B  C  D  E  F
+// Decimal:	    0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15
+
+// this is not my code, though amended to fit to module.
+function convertHexaToRgb(hex) {
+  hex = hex.replace(/#/g, '');
+
+  if (hex.length === 3) {
+      hex = hex.split('').map(function (hex) {
+          return hex + hex;
+      }).join('');
+  }
+
+  var result = /^([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})[\da-z]{0,0}$/i.exec(hex);
+  if (result) {
+      var red = parseInt(result[1], 16);
+      var green = parseInt(result[2], 16);
+      var blue = parseInt(result[3], 16);
+
+      return [red, green, blue];
+  } else {
+      return null;
+  }
+}
+console.log(convertHexaToRgb(randomHexColor));
+let rgbRandom = convertHexaToRgb(randomHexColor)
+
+// Write a function convertRgbToHexa which converts rgb to hexa color and it returns an hexa color.
+// Again this is not my code - located at https://www.html-code-generator.com/javascript/color-converter-script.
+
+function convertRgbToHexa(rgb) {
+  // Srgb = rgb.match(/^rgba?\(\s?(\d+),?\s?(\d+),?\s?(\d+),?\s?\/?\s?(\d?\.?\d+|\d+)%?\)$/i);
+  let hex = ''; 
+  if(rgb) {
+    var red = rgb[1] < 0 ? 0 : rgb[1] > 255 ? 255: rgb[1];
+    var green = rgb[2] < 0 ? 0 : rgb[2] > 255 ? 255: rgb[2];
+    var blue = rgb[3] < 0 ? 0 : rgb[3] > 255 ? 255: rgb[3];
+
+    hex = "#" +
+    ("0" + parseInt(red, 10).toString(16)).slice(-2) +
+    ("0" + parseInt(green, 10).toString(16)).slice(-2) +
+    ("0" + parseInt(blue, 10).toString(16)).slice(-2)
+  }
+  return hex;
+}
+
+// Sconsole.log(convertRgbToHexa(rgbRandom));
+
+// Write a function generateColors which can generate any number of hexa or rgb colors. // RGB done, just need to do Hex.
+
+var randomColor = '#'+Math.floor(Math.random()*16777216).toString(16);
+
+
+function repeatStringNumTimes(rgb, num) {
+  var repeatedRgb = "";
+
+   while (num > 0) {
+    rgb = ' rgb('+Math.floor(Math.random()*16777216).toString(16) +"),"
+    repeatedRgb = repeatedRgb + rgb
+    num--;
+  }
+    return (repeatedRgb);
+  }
+console.log(repeatStringNumTimes(`${randomColor}  ` ,10));
+console.log(repeatStringNumTimes(`${randomColor}  ` ,4));
+
+// cant get this to work, will try later
+function randomColorHex (num) {
+  let color = '';
+  let hexArray = []
+  
+    for (let i = 0; i < 6; i++) { 
+      randomC = (Math.random() * 16 | 0).toString(16);
+      color += randomC;
+    }
+      while (num > 0) {
+      hexArray.push('#' + color)
+      num--
+    }  return hexArray
+} 
+console.log(randomColorHex(4))
